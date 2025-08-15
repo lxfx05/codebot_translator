@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #FFFFFF; /* white */
+    --color-foreground: #000000; /* black */
+    --color-border: #808080; /* gray-500 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #000080; /* blue-800 */
+    
+    /* Card & Surface Colors */
+    --color-card: #E0E0E0; /* gray-300 */
+    --color-card-foreground: #000000; /* black */
+    --color-popover: #C0C0C0; /* gray-400 */
+    --color-popover-foreground: #000000; /* black */
+    
+    /* Muted Colors */
+    --color-muted: #808080; /* gray-500 */
+    --color-muted-foreground: #404040; /* gray-700 */
+    
+    /* Primary Colors */
+    --color-primary: #C0C0C0; /* gray-400 */
+    --color-primary-foreground: #000000; /* black */
+    
+    /* Secondary Colors */
+    --color-secondary: #808080; /* gray-500 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #000080; /* blue-800 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* State Colors */
+    --color-destructive: #FF0000; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    --color-success: #008000; /* green-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #FF8000; /* orange-500 */
+    --color-warning-foreground: #000000; /* black */
+    --color-error: #FF0000; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Windows 98 Specific Colors */
+    --color-surface: #E0E0E0; /* gray-300 */
+    --color-text-primary: #000000; /* black */
+    --color-text-secondary: #404040; /* gray-700 */
+    
+    /* Border Radius */
+    --radius: 0px;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Courier Prime', 'Courier New', monospace;
+  }
+  
+  /* Windows 98 Ridge and Sunken Border Effects */
+  .ridge-border {
+    border: 2px ridge var(--color-border);
+  }
+  
+  .sunken-border {
+    border: 2px inset var(--color-border);
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  .raised-border {
+    border: 2px outset var(--color-border);
+  }
+  
+  /* Button State Transitions */
+  .win98-button {
+    @apply ridge-border bg-surface text-text-primary;
+    transition: all 150ms ease-out;
+  }
+  
+  .win98-button:hover {
+    @apply bg-primary;
+  }
+  
+  .win98-button:active {
+    @apply sunken-border;
+  }
+  
+  /* Typography Classes */
+  .font-heading {
+    font-family: 'Courier New', 'Courier Prime', monospace;
+  }
+  
+  .font-body {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+  }
+  
+  .font-caption {
+    font-family: 'Source Code Pro', monospace;
+  }
+  
+  .font-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}

@@ -1,0 +1,52 @@
+{
+    "name": "codebot-translator-html",
+    "version": "1.0.0",
+    "description": "HTML-based intelligent CodeBot Translator with AI-powered code translation capabilities",
+    "private": true,
+    "scripts": {
+        "start": "vite",
+        "build": "vite build --sourcemap",
+        "serve": "vite preview",
+        "dev": "vite",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@dhiwise/component-tagger": "^1.0.10",
+        "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/typography": "^0.5.16",
+        "openai": "^5.12.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^5.0.0",
+        "autoprefixer": "^10.4.21",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^4.1.12",
+        "vite": "^5.0.0",
+        "vite-tsconfig-paths": "^5.1.4"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "keywords": [
+        "code-translation",
+        "ai",
+        "openai",
+        "programming",
+        "javascript",
+        "html",
+        "translator"
+    ],
+    "author": "CodeBot Team",
+    "license": "MIT"
+}
