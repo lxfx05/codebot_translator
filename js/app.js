@@ -1,38 +1,38 @@
 
-import React, { useState, useEffect} from 'react';
+import React, { useState} from 'react';
 
 function ChatBot() {
   const [input, setInput] = useState('');
   const [response, setResponse] = useState('');
-  const [client, setClient] = useState(null);
   const [sourceLang, setSourceLang] = useState('JavaScript');
   const [targetLang, setTargetLang] = useState('Python');
 
   const languages = [
-    'JavaScript',
-    'Python',
-    'C++',
-    'Java',
-    'C#',
-    'TypeScript',
-    'Go',
-    'Ruby',
-    'PHP',
-    'Swift'
+    'JavaScript', 'Python', 'C++', 'Java', 'C#',
+    'TypeScript', 'Go', 'Ruby', 'PHP', 'Swift'
   ];
 
-  useEffect(() => {
-    const openaiClient = new window.OpenAIClient();
-    setClient(openaiClient);
-}, []);
-
   const handleSend = async () => {
-    if (!client ||!input.trim()) return;
+    if (!input.trim()) return;
+
+    const systemPrompt = `
+Sei CodeBot, un assistente AI esperto nella traduzione di codice tra linguaggi di programmazione.
+Traduci il codice da ${sourceLang} a ${targetLang}, seguendo le best practice del linguaggio di destinazione.
+Includi commenti utili e un esempio di utilizzo se possibile.
+Rispondi sempre in italiano.
+`;
 
     try {
-      const selectedLanguages = [sourceLang, targetLang];
-      const reply = await client.generateChatCompletion(input, selectedLanguages);
-      setResponse(reply);
+      const res = await fetch('https://codebot-translator-backend-oqph.onrender.com/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          message: `${systemPrompt}\n\nCodice da tradurre:\n${input}`
+})
+});
+
+      const data = await res.json();
+      setResponse(data.reply);
 } catch (error) {
       setResponse(`❌ Errore: ${error.message}`);
 }
