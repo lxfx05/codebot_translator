@@ -89,14 +89,6 @@ This project uses Tailwind CSS for styling. The configuration includes:
 
 The app is built with responsive design using Tailwind CSS breakpoints.
 
-
-## 📦 Deployment
-
-Build the application for production:
-
-```bash
-npm run build
-```
 ## ❔ For best use create your personal API from:
 ```bash
 https://console.groq.com/keys
