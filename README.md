@@ -97,12 +97,7 @@ Build the application for production:
 ```bash
 npm run build
 ```
-## ❔ For best use use this api
-```bash
-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
-```
-
-or create a new api from 
+## ❔ For best use create your personal API from:
 ```bash
 https://console.groq.com/keys
 ```
